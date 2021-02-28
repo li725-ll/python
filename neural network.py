@@ -105,8 +105,8 @@ for filename in os.listdir("training_son"):
 scorecard_array = numpy.asarray(scorecard)
 print("训练子集的正确率= ", scorecard_array.sum() / scorecard_array.size)
 
-for filename in os.listdir("text"):
-	img = cv2.imread("text/" + filename, 0)  # 读图片
+for filename in os.listdir("test"):
+	img = cv2.imread("test/" + filename, 0)  # 读图片
 	correct_label = str(filename[3])
 	img = numpy.uint8(numpy.clip((2 * img), 0, 255))
 	resizeimg = cv2.resize(img, (100, 100), interpolation=cv2.INTER_CUBIC)
@@ -132,8 +132,8 @@ for filename in os.listdir("text"):
 scorecard_array = numpy.asarray(scorecard)
 print("测试集的正确率 = ", scorecard_array.sum() / scorecard_array.size)  # share of correct answers
 
-for filename in os.listdir("text_diferent"):
-	img = cv2.imread("text_diferent/" + filename, 0)  # 读图片
+for filename in os.listdir("test_diferent"):
+	img = cv2.imread("test_diferent/" + filename, 0)  # 读图片
 	correct_label = str(filename[3])
 	img = numpy.uint8(numpy.clip((2 * img), 0, 255))
 	resizeimg = cv2.resize(img, (100, 100), interpolation=cv2.INTER_CUBIC)
